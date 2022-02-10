@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Kotlin App Trail</string>
+    <string name="welcome_text">Welcome</string>
 </resources>
