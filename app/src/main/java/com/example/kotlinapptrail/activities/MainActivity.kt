@@ -1,8 +1,9 @@
-package com.example.kotlinapptrail
+package com.example.kotlinapptrail.activities
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.databinding.DataBindingUtil
+import com.example.kotlinapptrail.R
 import com.example.kotlinapptrail.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
