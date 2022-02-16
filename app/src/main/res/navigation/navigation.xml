@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    app:startDestination="@id/first_fragment"
+    android:id="@+id/navigation">
+
+    <!--
+        in fragments 2nd & 3rd
+        before going to destination fragment we clear last
+        all back stack (using popUpTo), so visited fragments will
+        not repeated in back stack even pop the
+        destination lastly visited (using popUpToInclusive)
+    -->
+
+    <fragment
+        android:id="@+id/first_fragment"
+        android:label="@string/first_fragment"
+        android:name="com.example.kotlinapptrail.fragments.FirstFragment"
+        tools:layout="@layout/fragment_first">
+
+        <action
+            android:id="@+id/action_first_fragment_to_second_fragment"
+            app:destination="@id/second_fragment"
+            app:popUpToInclusive="false" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/second_fragment"
+        android:label="@string/second_fragment"
+        android:name="com.example.kotlinapptrail.fragments.SecondFragment"
+        tools:layout="@layout/fragment_second">
+        <action
+            android:id="@+id/action_second_fragment_to_third_fragment"
+            app:destination="@id/third_fragment"
+            app:popUpTo="@id/second_fragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/third_fragment"
+        android:label="@string/third_fragment"
+        android:name="com.example.kotlinapptrail.fragments.ThirdFragment"
+        tools:layout="@layout/fragment_third">
+
+
+        <action
+            android:id="@+id/action_third_fragment_to_first_fragment"
+            app:destination="@id/first_fragment"
+            app:launchSingleTop="false"
+            app:popUpTo="@id/first_fragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+
+</navigation>

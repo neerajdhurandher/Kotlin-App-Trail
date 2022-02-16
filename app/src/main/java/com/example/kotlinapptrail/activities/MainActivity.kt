@@ -14,10 +14,5 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = DataBindingUtil.setContentView(this, R.layout.activity_main)
 
-        binding.button1.setOnClickListener {
-
-            binding.text1.text = getString(R.string.welcome_text)
-
-        }
     }
 }
